@@ -1,15 +1,13 @@
 import './App.css'
-import { FaBeer } from 'react-icons/fa'
+import Products from './components/Products'
 
 function App() {
 
 
   return (
-    <div>
-      <h1 className="flex items-center justify-center h-screen bg-gray-800 text-white text-2xl font-bold">
-        Welcome <FaBeer />
-      </h1>
-    </div>
+    <>
+      <Products />
+    </>
   );
 }
 
