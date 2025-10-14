@@ -5,6 +5,8 @@ import { fetchCategories } from "../store/actions";
 import {useEffect} from "react";
 import Filter from "./Filter";
 import useProductFilter from "./useProductFilter";
+import Loader from "./Loader";
+
 
 //http://localhost:xxxx?keyword=television&sortby=desc
 
@@ -30,7 +32,7 @@ const Products = () => {
         <div className="lg:px-14 sm:px-8 px-4 py-14 2xl:w-[%90] 2xl:mx-auto">
             <Filter categories={categories ? categories : []}/>
             {isLoading ? (
-                <p>It is loading...</p>
+                <Loader />
             ): errorMessage ? (
                 <div className="flex justify-center items-center h-[200px]">
                     <FaExclamationTriangle className="text-slate-800 text-3xl mr-2"/>
