@@ -11,7 +11,7 @@ const Filter = () => {
         {categoryId:2, categoryName: "Sports"},
         {categoryId:3, categoryName: "Clothing"},
         {categoryId:4, categoryName: "Books"},
-        {categoryId:5, categoryName: "Clothing"},
+        {categoryId:5, categoryName: "Furniture"},
         {categoryId:6, categoryName: "Toys"}
     ];
 
@@ -57,7 +57,7 @@ const Filter = () => {
         }else{
             params.set("category", selectedCategory);
         }
-        navigate(`${pathName}?${params}`);
+        navigate(`${pathname}?${params}`);
         setCategory(event.target.value);
     };
 
@@ -65,7 +65,7 @@ const Filter = () => {
         setSortOrder((prevOrder)=>{
             const newOrder = (prevOrder === "asc") ? "desc" : "asc";
             params.set("sortby", newOrder);
-            navigate(`${pathName}?${params}`);
+            navigate(`${pathname}?${params}`);
             return newOrder;
 
         })
