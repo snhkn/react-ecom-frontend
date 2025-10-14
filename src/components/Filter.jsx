@@ -5,15 +5,7 @@ import { FiArrowDown, FiArrowUp, FiRefreshCw, FiSearch } from "react-icons/fi";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 
-const Filter = () => {
-    const categories = [
-        {categoryId :1 , categoryName: "Electronics"},
-        {categoryId:2, categoryName: "Sports"},
-        {categoryId:3, categoryName: "Clothing"},
-        {categoryId:4, categoryName: "Books"},
-        {categoryId:5, categoryName: "Furniture"},
-        {categoryId:6, categoryName: "Toys"}
-    ];
+const Filter = ({categories}) => {
 
     const [searchParams] = useSearchParams();
     const params = new URLSearchParams(searchParams);
