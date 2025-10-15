@@ -6,6 +6,7 @@ import {useEffect} from "react";
 import Filter from "./Filter";
 import useProductFilter from "./useProductFilter";
 import Loader from "./Loader";
+import Paginations from "./Paginations"
 
 
 //http://localhost:xxxx?keyword=television&sortby=desc
@@ -19,7 +20,7 @@ const Products = () => {
         (state) => state.errors
     );
 
-    const {products, categories} = useSelector((state)=>state.products)
+    const {products, categories, pagination} = useSelector((state)=>state.products)
     const dispatch =useDispatch();
 
     useProductFilter();
@@ -47,6 +48,10 @@ const Products = () => {
                         products.map((item, i) => <ProductCard key={i} {...item} />
 
                         )}
+                    </div>
+                    <div className="flex justify-center pt-10">
+                        <Paginations numberOfPage={pagination?.totalPages}
+                                     totalProducts={pagination?.totalElements}/>
                     </div>
                 </div>
             )
